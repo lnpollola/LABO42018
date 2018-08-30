@@ -2,7 +2,9 @@ Estructura y navegacion
 Lazy Load --> Ionic
 	Nos permite trabajar como si fuera un celular
 	Ruteos
-
+REVISAR NG CLASS 
+1 carpeta servicios
+1 carpeta de clases 
 Navegación
 	página de inicio --> index.html
 	base href/ (subdirectorio donde corre la app)	
@@ -51,3 +53,13 @@ Navegación
 			component.html --> lo que se ve del html
 			component.spec.ts --> tests ?? TDD test driver developer
 
+navegacion
+	EN INDEX --> se carga primero 
+	EN COMPONENT.HTML --> 
+	DEPENDE DEL MODULO EN EL QUE ESTOY DONDE LO programacion
+	MEJOR QUE ESTE EN EL COMPONENT 
+	APLICACIONES DE 1 SOLA VENTANA
+RUTEO
+	app.module.ts 
+		declarations:
+			BienvenidaComponent
