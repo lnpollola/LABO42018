@@ -1,0 +1,29 @@
+SERVIDOR
+
+2TP importantes
+	1ero con o sin backend (hace la nota)
+	2do con backend si o si 
+ACTUALIZAR NODEJS
+ACTUALIZAR NPM
+INSTALAR ANGULAR CLI
+	npm install -g @angular/cli
+	ng new nombre-app
+	cd nombre-app
+	ng serve
+parciales
+examen practico angular con json webtoken 
+2do 
+abm login json webtoken
+POO
+enunciado de a partes 
+
+4/10 PRIMER PARCIAL
+
+clase 9 o 10 	--> primeNG
+clase 12  	--> google api / geolocalizacion / captcha 
+clase 13	--> entrega y corrección tp / graficos estadisticos (hidechar)
+
+practica supervisada
+mismo lenguaje, otro framework 
+
+HACER 3 JUEGOS QUE ANDEN Y UNO NUEVO

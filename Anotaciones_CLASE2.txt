@@ -1,0 +1,7 @@
+Estructura y navegacion
+Lazy Load --> Ionic
+	Nos permite trabajar como si fuera un celular
+	Ruteos
+
+Navegación
+	
