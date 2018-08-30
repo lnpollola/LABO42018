@@ -4,4 +4,50 @@ Lazy Load --> Ionic
 	Ruteos
 
 Navegación
-	
+	página de inicio --> index.html
+	base href/ (subdirectorio donde corre la app)	
+		--> En el ejemplo de github. tiene el nombre de la carpeta en la cual se creo
+		Siempre tiene que estar referenciado en que carpeta esta en el server
+		si la app es la raiz del sitio, lo dejo con /
+		si esta en una carpeta y es un subsitio, tengo que ponerle ese folder 
+	app-root
+		Directiva --> Componente --> Tag html
+		src --> app 
+			module.ts
+				archivos refernciados por import
+				entre los modulos estan los archivos que uso(en cada uno puede haber mas de uno)
+				recordar SIEMPRE EXPORTAR CUANDO CREO UN MODULO "export class AppModule {}"
+				@ngModule
+					Declaraciones
+					Bibliotecas -> Se diferencian que uno da funcionalidades, el otro objetos
+						Imports 	
+						Providers 
+				
+			component.ts
+				CREAR COMPONENTES ng g component componentes/bienvenida
+				codigo logico que se ejecuta en cada Componente
+				aca se define que voy a hacer en el Componente
+				con import puedo meter otros componentes
+				@component
+					define el componente con los parametros
+				export class Appcomponent
+					programacion de funcionalides 
+					timers
+					lógicas 
+				Eventos --> Ciclo de vida de angular IO
+				!!!!BUSCAR SOBRE ESTO
+					ngOnInit (){console.log("Inicio el componente"); }
+					ngOnDestroy (){console.log("Fin del componente"); }
+
+
+					ngDoCheck() --> Meterle codigo para cosas que no haga angular por si solo
+					ngOnChanges()
+				
+					ngAfterViewInit() --> Despues de la inicializacion 
+
+
+
+			component.css --> Estilo del componente
+			component.html --> lo que se ve del html
+			component.spec.ts --> tests ?? TDD test driver developer
+
