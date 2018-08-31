@@ -6,18 +6,25 @@ import { BienvenidaComponent } from './componentes/bienvenida/bienvenida.compone
 import { LoginComponent } from './componentes/login/login.component';
 // RUTEO
 import { Routes, RouterModule} from '@angular/router';
+import { ErrorComponent } from './componentes/error/error.component';
 
 // RUTEO
+//ARRAY DE JSON QUE VA ADENTRO DEL ROUTERMODULE
 const miRuteo = [
   {path:'bienvenida', component:BienvenidaComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  // Componente por default
+  {path:'', component: LoginComponent},
+  {path:'**', component: ErrorComponent} //PAGINA DE ERROR
+
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     BienvenidaComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
