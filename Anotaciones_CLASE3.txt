@@ -1,0 +1,47 @@
+BINDINGS 
+    OPTIMIZAR EL TRABAJO SOBRE INTERFAZ GRAFICA
+    GUARDAR DIRECTAMENTE DEL FORM EN JSON
+    ACCEDO AL DATO DE LA VARIABLE 
+    TOCO BOTON -> BOTON SE LINKEA CON FUNCION
+    ATRIBUTOS ENTRE CORCHETES Y PARENTESIS
+    DEFINIR OBJETO EN TS Y QUE SE RELACIONE DIRECTO CON LA INTERFAZ
+    
+    DE DOBLE VIA 
+        ENTRE CORCHETES --> PARA LOS CUADROS DE TEXTO
+            [(NGModel)] = "Nombre"
+                NOMBRE DEL OBJETO QUE VOY A DEVOLVER DEL COMPONENTE
+    1 SOLA VIA 
+        {{nombre}} (solo viene del back, no lo puedo tocar)
+    MODIFICAR LAS IMAGENES DE FONDO
+
+PASAJES DE PARAMETROS
+    2 INTERACCIONES CON LOS COMPONENTES
+        EN C -> PUNTERO A FUNCION
+        EN .NET -> DELEGADOS -> EVENTOS
+        EN ANGULAR -> PASAR COMPORTAMIENTO O VALOR
+            COMO PASAR UN VALOR
+                VALOR SE TIENE QUE PODER ESCRIBIR EN EL HTML AL INVOCAR AL COMPONENTE
+                <APP-ALGO DATO="HOLA">
+                COMPONENTE REUTILIZABLE
+                    UNA LISTA DE ANY O JUEGO 
+
+                    @input()
+                    listado: Array<any> 
+
+                    COMPONENTE
+                        agilidad-mas-listado-component.HTML
+                            componente de arriba
+                                [listado] --> variable de componente 
+                            componente de abajo 
+
+                        agilidad-mas-listado-component.ts
+                            en este lo usa
+                            public listadoParaCompartir: Array<any>;
+
+                        listado-de-resultados.component.ts
+                            es el que muestra los resultados 
+                        listado-de-resultados.component.html
+                            <tr *ngFor="let juego of listado">
+                            ngFor ngClass ngIf --> directivas
+                        
+            COMO PASAR COMPORTAMIENTO
