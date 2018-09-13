@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-pregunta',
@@ -12,9 +12,17 @@ export class PreguntaComponent implements OnInit {
   @Input()
   cuestionario: string;
 
+  
+  @Output() emiterPregunta:EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  funcionContador()
+  {
+    this.emiterPregunta.emit();
   }
 
 }

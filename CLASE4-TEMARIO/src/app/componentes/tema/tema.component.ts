@@ -12,7 +12,12 @@ export class TemaComponent implements OnInit {
   constructor() { }
 
   public tema="temadeinicio";
-  
+  public contador = 0;
+
+  funcionContador(){
+   this.contador++;
+  }
+
   ngOnInit() {
   }
 

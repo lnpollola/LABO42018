@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PreguntaComponent } from '../pregunta/pregunta.component';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-cuestionario',
@@ -9,6 +9,8 @@ import { PreguntaComponent } from '../pregunta/pregunta.component';
 export class CuestionarioComponent implements OnInit {
   @Input()
   tema: string;
+ 
+  @Output() emiterCuestionario:EventEmitter<any> = new EventEmitter();
 
   public cuestionario="cuestionariodeinicio";
  
@@ -19,4 +21,8 @@ export class CuestionarioComponent implements OnInit {
   ngOnInit() {
   }
 
+  funcionCuestionario()
+  {
+    this.emiterCuestionario.emit();
+  }
 }
