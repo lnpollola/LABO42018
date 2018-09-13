@@ -10,7 +10,7 @@ export class CuestionarioComponent implements OnInit {
   @Input()
   tema: string;
 
-  public cuestionario="cuestionario";
+  public cuestionario="cuestionariodeinicio";
  
   constructor() {
 

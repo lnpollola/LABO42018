@@ -11,7 +11,7 @@ export class TemaComponent implements OnInit {
 
   constructor() { }
 
-  public tema="cualquierTema";
+  public tema="temadeinicio";
   
   ngOnInit() {
   }

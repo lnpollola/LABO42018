@@ -6,7 +6,7 @@ import { TemaComponent } from './componentes/tema/tema.component';
 import { CuestionarioComponent } from './componentes/cuestionario/cuestionario.component';
 import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
 import { Routes, RouterModule} from '@angular/router';
-// import { AppModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 const miRuteo = [
   // Componente por default
@@ -25,6 +25,7 @@ const miRuteo = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(miRuteo)
   ],
   providers: [],
