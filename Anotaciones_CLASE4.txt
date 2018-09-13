@@ -1,0 +1,20 @@
+Hacer 3 html
+1 que sea tema
+    meter adentro input con definición
+1 que sea cuestionario
+    que tenga 2 inputs 
+    que pase los datos a pregunta
+1 que sea pregunta 
+    en pregunta están las definiciones {{}}
+
+TEMA
+    CUESTIONARIO (TEMA)
+        PREGUNTA 
+            TEMA
+                
+            CUESTIONARIO
+
+GUARDAR LA PREGUNTA , AUMENTAR LA CANTIDAD 
+BOTON EN PREGUNTA.HTML
+INCREMENTAR EL CONTADOR EN TEMA.HTML 
+TEMA --> {{contador}}
