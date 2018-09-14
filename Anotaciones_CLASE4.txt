@@ -18,3 +18,30 @@ GUARDAR LA PREGUNTA , AUMENTAR LA CANTIDAD
 BOTON EN PREGUNTA.HTML
 INCREMENTAR EL CONTADOR EN TEMA.HTML 
 TEMA --> {{contador}}
+
+TEMA
+(emiter2)="Aceptar3($event)";
+funcion incrementar3($event)
+{
+    alert($event);
+    this.contador++;
+}
+
+CUESTIONARIO
+HTML
+    PREGUNTA (emiter)="incrementar2($event)"
+incrementar2 ($event)
+{
+    this.emiter2.emit($event);
+}
+
+PREGUNTA
+HTML
+    (click)="Aceptar()"
+incrementar() {
+    if (this.respuesta ==undefined || this.respuesta=="")
+    {this.respuesta = "";
+    }
+    this.emiter.emit(this.respuesta);
+}
+
