@@ -16,7 +16,9 @@ export class AppComponent {
 
   TraerPaises()
   { 
-    this.servicioPaises.TraerPaises().subscribe(data=>{console.log(JSON.parse(data._body)});
+    this.servicioPaises.TraerPaises().subscribe(
+      data=>{
+        console.log(JSON.parse(data._body).filter(function(pais){return pais.name=="Argentina";}))   });
 
   }
 
