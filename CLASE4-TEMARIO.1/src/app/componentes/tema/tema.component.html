@@ -1,0 +1,6 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>El tema es:  </h1>
+<input type="text" [(ngModel)]="tema" placeholder="Ingrese un tema">
+<app-cuestionario [tema]="tema" (emiterCuestionario)="funcionContador()" ></app-cuestionario>
+
+{{contador}}
