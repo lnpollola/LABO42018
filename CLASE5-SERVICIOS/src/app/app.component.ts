@@ -16,7 +16,7 @@ export class AppComponent {
 
   TraerPaises()
   { 
-    this.servicioPaises.TraerPaises().subscribe(data=>{console.log(data)});
+    this.servicioPaises.TraerPaises().subscribe(data=>{console.log(JSON.parse(data._body)});
 
   }
 
