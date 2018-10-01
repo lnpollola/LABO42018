@@ -1,0 +1,29 @@
+<div class="container" style="background-color: cornflowerblue">
+  <h1> Ta-Te-Ti </h1> 
+
+  <button class="btn btn-jugar" (click)="ReiniciarJuego()">Jugar de nuevo</button>
+  <div class="juego">
+                
+  <div class="tablero">
+
+    <tr *ngFor="let filas of miJuego.tablero">
+      <td *ngFor="let casilla of filas ">  
+        <div class="casilla-tateti" (click)="MarcarCasilla(casilla.coorX, casilla.coorY, this.turno)"> <img class="imgCasilla" src="../../../assets/imagenes/logoUtn.png" *ngIf="casilla.valor=='jugador'" >
+          <img class="imgCasilla" *ngIf="casilla.valor=='pc'" src="../../../assets/imagenes/bobBaila.png" > </div>
+      </td>      
+    </tr>
+    
+  </div>
+<div class="info"> 
+  <h1> Turno: </h1><img class="imgInfo" *ngIf="this.turno=='jugador'" src="../../../assets/imagenes/logoUtn.png" >
+                    <img class="imgInfo" *ngIf="this.turno=='pc'" src="../../../assets/imagenes/bobBaila.png" >
+</div>
+</div>
+
+<div class="msjFinal"> 
+    <h1 *ngIf="this.ganador=='jugador'">  Ganaste !!!</h1>
+    <h1 *ngIf="this.ganador=='pc'">  Perdiste =(</h1>
+    </div>
+
+
+</div>

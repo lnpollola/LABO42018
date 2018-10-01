@@ -1,0 +1,47 @@
+
+<div style="text-align:center ;font-family: 'Press Start 2P',cursive;color: white; ">
+  <h2>
+   Piedra Papel Tijera
+  </h2>
+ </div>
+<form name="juego" style="font-family: 'Press Start 2P',cursive; font-size: 10px">
+  <div class="centro">
+      <div align="center" class="titulo">
+      <h4>Elija su opcion</h4>
+      </div>
+      <br>
+      <table border="0" width="60%" height="auto" align="center">
+          <tr>
+              <td><img style="margin:2px" src="../../../assets/imagenes/piedra.jpg" border="1" width="100px" height="150px" (click)="Piedra()"></td>
+            
+              <td><img style="margin:2px" src="../../../assets/imagenes/papel.jpg" border="1" width="100px" height="150px" (click)="Papel()"></td>
+             
+              <td><img style="margin:2px" src="../../../assets/imagenes/tijera.jpg" border="1" width="100px" height="150px" (click)="Tijera()"></td>
+          </tr>
+      </table>
+
+      <br><br>
+      <div [hidden]=ocultarOponente >
+        <div *ngIf="juegoPPT.numeroRandom==1" align="center">
+            <img src="../../../assets/imagenes/piedra.jpg" border="1" width="100px" height="150px">
+        </div>
+
+        <div *ngIf="juegoPPT.numeroRandom==2" align="center">
+            <img src="../../../assets/imagenes/papel.jpg" border="1" width="100px" height="150px">
+        </div>
+
+        <div *ngIf="juegoPPT.numeroRandom==3" align="center">
+            <img src="../../../assets/imagenes/tijera.jpg" border="1" width="100px" height="150px">
+        </div>
+      </div>
+      <h2></h2>
+    </div>
+  </form>
+
+  <div id="snackbar">{{Mensajes}}</div>
+
+
+
+<!--<p>
+  pptijera works!
+</p>-->

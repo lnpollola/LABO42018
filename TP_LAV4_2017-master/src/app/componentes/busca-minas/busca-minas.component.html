@@ -1,0 +1,50 @@
+<body>
+
+
+<h1>Buscaminas</h1>
+
+<img src="/assets/imagenes/logoBuscaMinas.png" alt="">
+
+<div class="container-juego">
+<button class="btn btn-jugar" (click)=Jugar()> Jugar de nuevo   </button>
+
+<div class="tablero">   
+<tr *ngFor="let filas of miJuego.tablero " >    
+    <td *ngFor= "let casilla of filas"> 
+        <div class="casilla" (click)="DescubrirCasilla(casilla.coordenada)" (contextmenu)="MarcarCasilla($event,casilla.coordenada)" >
+          <button class="btn-casilla" *ngIf="!casilla.seleccion"> <img class="banderita" *ngIf="casilla.marcada" src="/assets/imagenes/banderita.png" alt="">  </button>
+            <div *ngIf="casilla.seleccion"> 
+                
+                <div class="casilla_bomba" *ngIf="casilla.tieneMina" >
+                        <img class="bomba" src="/assets/imagenes/boom.png" alt="">
+                </div>
+
+                <div class="casilla_noBomba" *ngIf="!casilla.tieneMina">
+                    
+                    {{casilla.minasCerca}}
+                </div>
+                    
+
+            </div>
+            </div>  
+    
+    </td>
+</tr>
+
+</div>
+
+</div>
+<div class="finalJuego" >
+    <h1>{{mensaje}}</h1>
+    </div>
+<div >Minas Encontradas:{{miJuego.minasEncontradas}} </div>
+<div >Cantidad de minas:{{miJuego.cantidadMinas}} </div>
+
+
+
+   
+     
+     
+      
+  
+</body>

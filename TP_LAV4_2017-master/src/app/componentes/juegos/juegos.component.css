@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+h1{
+    font-family: 'Monoton', cursive;
+    color: yellow;
+}
+.panel
+{
+    height: 200px;   
+    background-position: center;
+    background-repeat: repeat;
+   /* background-size: cover;*/
+    position: relative;
+    /*background-color: skyblue;*/
+   background-image: url("/assets/imagenes/fondo.gif");
+        
+}
+
+
+

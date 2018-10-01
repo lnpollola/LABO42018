@@ -1,0 +1,40 @@
+<div style="background-color:#22735C;" class="titulo">
+    Agilidad   Aritmética
+  </div>
+  
+  <br>
+  
+  <!--Reglas de juego-->
+  <div style="margin-left: 10px">
+
+  
+          <button type="button" class="btn btn-primary" (click)="showDialog()" pButton label="Show"><i class="fa fa-external-link-alt"></i>¿Cómo se juega?</button>
+          <button type="button" class="btn btn-warning" (click)='irA()'>Ir a todos los juegos</button>    
+          <button type="button" class="btn btn-success" [hidden]="!ocultarVerificar" (click)='NuevoJuego()'>Comenzar</button>
+          <p id='timer' class="tiempo" readonly >{{cronometro}}<i class="mili">{{cronoMili}}</i></p> 
+          <!--Fin reglas de juego-->
+  </div>
+  
+  <br><br>
+  
+  <div  class="pizarron">
+    <div [hidden]=ocultarVerificar><br>
+      <i class=txt>{{nuevoJuego.numero1}}</i>
+      <i class=txt >{{nuevoJuego.operador}}</i>
+      <i class=txt >{{nuevoJuego.numero2}}</i>
+      <br><br>
+      <input (keydown)="keyDownFunction($event)" autofocus [(ngModel)]='nuevoJuego.respuesta' class=txt type="text" style='width:60%; opacity: 50%; background-color:rgba(0, 0, 0, 0.514); text-align:center; ' >
+      <br>
+      <div>
+        <i (click)="rendirse()" class="fa fa-flag" style="margin-left:20%; color:white; font-size: 40px;"></i>
+        <i (click)="verificar()" class="fa fa-check" style="margin-left:40%; color:white; font-size: 40px;"></i>
+      </div>
+  </div>
+  
+  <div [hidden]='!nuevoJuego.verifica'>
+    
+      <i class=txt>{{nuevoJuego.victoria}}</i>
+      <br><br>
+      <input readonly [(ngModel)]='nuevoJuego.calculo' class=txt type="text" style='width:60%; opacity: 50%; background-color:rgba(0, 0, 0, 0.514); text-align:center; ' >
+  </div>
+  

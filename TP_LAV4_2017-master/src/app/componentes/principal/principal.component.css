@@ -1,0 +1,30 @@
+
+body 
+{
+    background-color: #51a2e4;
+    background-image: url("/assets/imagenes/fondo.gif");  
+    margin-bottom: 0%; 
+}
+
+.imagenDeMenu{
+width: 80px;
+height: 70px;
+
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #100000;
+    }
+    li{
+        text-align: center;
+        background-color:rgb(203, 255, 196);
+    }
+
+
+    
+

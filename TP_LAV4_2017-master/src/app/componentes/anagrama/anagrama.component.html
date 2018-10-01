@@ -1,0 +1,12 @@
+<div class="container">
+  
+  <h1 class="titulo">  Anagrama </h1>
+
+  <div class="letras"><h1 *ngFor="let letra of miJuego.arrayDeLetras"> {{letra}}</h1> </div>
+  <input [(ngModel)]="ingresoUsuario" type="text" placeholder="Ingrese la palabra">
+  
+  <button (click)="Verificar()"> Verificar </button>
+
+  <h1 *ngIf="this.miJuego.gano">  ganste</h1>
+
+</div>
