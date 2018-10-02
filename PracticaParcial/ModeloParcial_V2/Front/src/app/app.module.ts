@@ -16,15 +16,14 @@ import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeladosComponent } from './componentes/helados/helados.component';
-import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-helado.component';    
+import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-helado.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';    
 
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
-                 {path:'pruebaParcial', component:HeladosComponent} 
+                 {path:'pruebaParcial', component:HeladosComponent},
+                 {path:'' , PrincipalComponent}
                 ]
-
-
-
 
 @NgModule({
   declarations: [
@@ -33,7 +32,8 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     CuestionarioComponent,
     PreguntaComponent,
     HeladosComponent,
-    TraerUnHeladoComponent
+    TraerUnHeladoComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
