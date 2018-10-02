@@ -1,0 +1,42 @@
+<ng-container>
+	<table class="table table-condensed" border="1" style="float:left; min-width: 40%; margin: 2.5%;">
+	  <caption><h1>Listado de mascotas</h1></caption>
+	  <thead>
+	    <tr>
+	      <th>Id</th>
+	      <th>Nombre</th>
+	      <th>Tipo</th>
+	      <th>FechaDeNacimiento</th>
+	      <th>Foto</th>
+	      <th>Borrar</th>
+          <!--<th>Mostrar</th>-->
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr *ngFor="let mascota of listadoDemascotas" [ngStyle]="{ 'background-color': mascota.sexo == 'femenino' ? 'pink' : '' }">
+	      <td>{{mascota.id}} </td>
+	      <td>{{mascota.nombre}} </td> 
+	      <td appPerroGato [tipo]=mascota.tipo>{{mascota.tipo}} </td> 
+	      <td>{{mascota.fechaDeNacimiento}} </td>       
+	      <td *ngIf="mascota.RutaDeFoto"><img src='assets/fotos/{{mascota.RutaDeFoto}}.jpg' width="50px"/> </td>
+	      <td *ngIf="!mascota.RutaDeFoto"><img src='assets/fotos/default.png' width="50px"/> </td>
+	      <td><app-borrar-mascota [id]="mascota.id"></app-borrar-mascota></td>
+	      <!--<td><button (click)="enviar(mascota)">Mostrar</button> </td>-->
+	    </tr>
+	  </tbody>
+	</table>
+	<div style="float:right; min-width: 40%; margin: 2.5%;">
+		<div style="padding: 6%;">Editar: <input id="mostrarFormAlta" type="checkbox" name="mostrarFormAlta" (change)="mostrarForm($event)"><br><br></div>
+		<div id="formAlta" style="visibility: hidden; border:solid; padding: 2%;">
+			Nombre:<br><input type="text" name="nombremascota" id="nombremascota" [(ngModel)]="mascota.nombre"><br>
+			Tipo:<br>
+			<select name="sexomascota" id="sexomascota" [(ngModel)]="mascota.tipo">
+				<option value="" disabled>Seleccione</option>
+				<option value="perro">perro</option>
+				<option value="gato">gato</option>
+			</select><br>
+			Fecha de nacimiento:<br><input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" [(ngModel)]="mascota.fechaDeNacimiento"><br>
+			<button (click)="guardar()">Guardar</button>
+		</div>
+	</div>
+</ng-container>

@@ -1,0 +1,41 @@
+<ng-container>
+	<table class="table table-condensed" border="1" style="float:left; min-width: 40%; margin: 2.5%;">
+	  <caption><h1>Listado de mascotas</h1></caption>
+	  <thead>
+	    <tr>
+	      <th>Id</th>
+	      <th>Nombre</th>
+	      <th>Tipo</th>
+	      <th>FechaDeNacimiento</th>
+	      <th>Foto</th>
+          <!--<th>Mostrar</th>-->
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr *ngFor="let mascota of mascotas">
+	      <td>{{mascota.id}} </td>
+	      <td>{{mascota.nombre}} </td> 
+	      <td>{{mascota.tipo}} </td> 
+	      <td>{{mascota.fechaDeNacimiento}} </td>       
+	      <td *ngIf="mascota.RutaDeFoto"><img src='assets/fotos/{{mascota.RutaDeFoto}}.jpg' width="50px"/> </td>
+	      <td *ngIf="!mascota.RutaDeFoto"><img src='assets/fotos/default.png' width="50px"/> </td>
+	      <!--<td><button (click)="enviar(mascota)">Mostrar</button> </td>-->
+	    </tr>
+	  </tbody>
+	</table>
+	<!-- <div style="float:right; min-width: 40%; margin: 2.5%;">
+		<div style="padding: 6%;">Editar: <input id="mostrarFormAlta" type="checkbox" name="mostrarFormAlta" (change)="mostrarForm($event)"><br><br></div>
+		<div id="formAlta" style="visibility: hidden; border:solid; padding: 2%;">
+			Nombre:<br><input type="text" name="nombremascota" id="nombremascota" [(ngModel)]="mascota.nombre"><br>
+			Sexo:<br>
+			<select name="sexomascota" id="sexomascota" [(ngModel)]="mascota.sexo">
+				<option value="" disabled>Seleccione</option>
+				<option value="femenino">femenino</option>
+				<option value="masculino">masculino</option>
+			</select><br>
+			Mail:<br><input type="text" name="mailmascota" id="mailmascota" [(ngModel)]="mascota.mail"><br>
+			Password:<br><input type="password" name="passwordmascota" id="passwordmascota" [(ngModel)]="mascota.password"><br><br><br>
+			<button (click)="guardar()">Guardar</button>
+		</div>
+	</div>-->
+</ng-container>

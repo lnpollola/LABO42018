@@ -1,0 +1,28 @@
+<ng-container>
+
+	<table class="table table-condensed" border="1" style="float:left; min-width: 40%; margin: 2.5%;">
+	  <caption><h1>Mostrar datos de persona</h1></caption>
+	  <thead>
+	    <tr>
+	      <th>Id</th>
+	      <th>Nombre</th>
+	      <th>Mail</th>
+	      <th>Sexo</th>
+	      <th>Password</th>
+	      <th>Foto</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>{{persona.id}} </td>
+	      <td>{{persona.nombre}} </td> 
+	      <td>{{persona.mail}} </td> 
+	      <td>{{persona.sexo}} </td>       
+	      <td>{{persona.password}} </td>
+	      <td *ngIf="persona.foto"><img src='assets/fotos/{{persona.foto}}.jpg' width="50px"/> </td>
+	      <td *ngIf="!persona.foto"><img src='assets/fotos/default.png' width="50px"/> </td>
+	    </tr>
+	  </tbody>
+	</table>
+
+</ng-container>

@@ -1,0 +1,45 @@
+<ng-container>
+	<table class="table table-condensed" border="1" style="float:left; min-width: 40%; margin: 2.5%;">
+	  <caption><h1>Listado de Personas</h1></caption>
+	  <thead>
+	    <tr>
+	      <th>Id</th>
+	      <th>Nombre</th>
+	      <th>Mail</th>
+	      <th>Sexo</th>
+	      <th>Password</th>
+	      <th>Foto</th>
+	      <th>Borrar</th>
+          <th>Mostrar</th>	
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr *ngFor="let persona of listadoDePersonas" [ngStyle]="{ 'background-color': persona.sexo == 'femenino' ? 'pink' : '' }">
+	      <td>{{persona.id}} </td>
+	      <td>{{persona.nombre}} </td> 
+	      <td>{{persona.mail}} </td> 
+	      <td>{{persona.sexo}} </td>       
+	      <td>{{persona.password}} </td>
+	      <td *ngIf="persona.foto"><img src='assets/fotos/{{persona.foto}}.jpg' width="50px"/> </td>
+	      <td *ngIf="!persona.foto"><img src='assets/fotos/default.png' width="50px"/> </td>
+	      <td><button (click)="borrarUno(persona.id)">Borrar</button> </td>
+	      <td><button (click)="enviar(persona)">Mostrar</button> </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<div style="float:right; min-width: 40%; margin: 2.5%;">
+		<div style="padding: 6%;">Editar: <input id="mostrarFormAlta" type="checkbox" name="mostrarFormAlta" (change)="mostrarForm($event)"><br><br></div>
+		<div id="formAlta" style="visibility: hidden; border:solid; padding: 2%;">
+			Nombre:<br><input type="text" name="nombrePersona" id="nombrePersona" [(ngModel)]="persona.nombre"><br>
+			Sexo:<br>
+			<select name="sexoPersona" id="sexoPersona" [(ngModel)]="persona.sexo">
+				<option value="" disabled>Seleccione</option>
+				<option value="femenino">femenino</option>
+				<option value="masculino">masculino</option>
+			</select><br>
+			Mail:<br><input type="text" name="mailPersona" id="mailPersona" [(ngModel)]="persona.mail"><br>
+			Password:<br><input type="password" name="passwordPersona" id="passwordPersona" [(ngModel)]="persona.password"><br><br><br>
+			<button (click)="guardar()">Guardar</button>
+		</div>
+	</div>
+</ng-container>
