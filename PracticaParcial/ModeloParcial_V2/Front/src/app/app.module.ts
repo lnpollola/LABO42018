@@ -9,7 +9,7 @@ import { HttpModule } from '@angular/http';
 //import { HttpClientModule }    from '@angular/common/http';
 
 import { MiHttpService } from './servicios/mi-http.service';
-import { GenericoService } from './servicios/generico.service';
+import { HeladosService } from './servicios/heladosService.service';
 import { TemaComponent } from './componentes/tema/tema.component';
 import { CuestionarioComponent } from './componentes/cuestionario/cuestionario.component';
 import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
@@ -17,12 +17,15 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeladosComponent } from './componentes/helados/helados.component';
 import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-helado.component';
-import { PrincipalComponent } from './componentes/principal/principal.component';    
-
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { ListadoHeladosComponent } from './componentes/listado-helados/listado-helados.component';  
+import { MatTableModule } from '@angular/material/table';  
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TablaMatComponent } from './componentes/tabla-mat/tabla-mat.component';
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
                  {path:'pruebaParcial', component:HeladosComponent},
-                 {path:'' , PrincipalComponent}
+                 {path:'' , component:AppComponent}
                 ]
 
 @NgModule({
@@ -33,11 +36,15 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     PreguntaComponent,
     HeladosComponent,
     TraerUnHeladoComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ListadoHeladosComponent,
+    TablaMatComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    MatTableModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot(miRuteo)
 
@@ -46,7 +53,7 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
   ],
   providers: [
     MiHttpService,
-    GenericoService
+    HeladosService
 
   ],
   bootstrap: [AppComponent]

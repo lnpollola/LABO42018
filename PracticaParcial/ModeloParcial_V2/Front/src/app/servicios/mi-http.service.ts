@@ -16,8 +16,6 @@ export class MiHttpService {
   
 
   constructor(public http:Http) { }
-  
-
   public httpGet(metodo:string, objeto:any):Observable<any>{
 
     return this.http
@@ -29,7 +27,7 @@ export class MiHttpService {
  
   public httpPost(metodo:string, objeto:any)
   {
-    return this.http.post(this.api + metodo,objeto)
+    return this.http.post(this.api + metodo, objeto)
     .pipe(catchError(this.handleError));
   }
 
@@ -44,29 +42,7 @@ export class MiHttpService {
       return error;
   }
 
- /* 
-  //Con header
-  public httpPost(metodo:string, objeto:any)
-  {
-    return this.http.post(
-                          this.api + metodo,objeto,{
-                            headers : new Headers({
-                              'Content-Type' : 'application/json'
-                              }
-                            )
-    })
-    .pipe(catchError(this.handleError));
-  }
-*/
 
-/*
-  // Codigo de Mati
-  public httpPostO(url: string, objeto): Observable<Response> {
-    return this.http.post(this.api + url, objeto)
-      .map((res: Response) => res.json())
-      .catch((err: any) => Observable.throw(err.json().error || 'Server error'));
-  }
-*/
 
 
 

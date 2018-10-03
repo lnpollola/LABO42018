@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GenericoService } from './servicios/generico.service';
+import { HeladosService } from './servicios/heladosService.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { GenericoService } from './servicios/generico.service';
 export class AppComponent {
   title = 'EjerciciosClase';
 
-  constructor(private servicio:GenericoService){
+  constructor(private servicio:HeladosService){
 
   }
 
@@ -25,7 +25,26 @@ export class AppComponent {
         data=>{console.log(JSON.parse(data._body)
           );})
 */
-    
+// title = 'Practica primer parcial';
+// tipo = 'gato'
+
+// mascotas:Array<mascota>;
+
+// constructor() { 
+
+//   this.mascotas = new Array<mascota>();
+
+// }
+
+// ngOnInit() {
+
+// }
+
+// mostrar($event){
+
+//     this.mascotas = $event;
+
+// }
 
   
         }

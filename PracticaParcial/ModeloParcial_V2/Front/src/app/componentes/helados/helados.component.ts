@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GenericoService } from '../../servicios/generico.service';
+import { HeladosService } from '../../servicios/heladosService.service';
 import { Helado } from '../../clases/helado';
 //import { InputGroup  } from 'primeng/inputtext';
 
@@ -20,7 +20,7 @@ export class HeladosComponent implements OnInit {
 
   mostrarHelados: boolean = false;
 
-  constructor(private _servicio:GenericoService) {
+  constructor(private _servicio:HeladosService) {
     
     this._servicio.ServiceTraerHelados().subscribe(data => {   
       this.listaHelados = JSON.parse(data._body);

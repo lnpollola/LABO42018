@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GenericoService} from '../../servicios/generico.service';
+import { HeladosService} from '../../servicios/heladosService.service';
 import { Helado } from '../../clases/helado';
 
 @Component({
@@ -11,7 +11,7 @@ export class TraerUnHeladoComponent implements OnInit {
 
   unHelado: Helado;
 
-  constructor(private _servicio:GenericoService) { }
+  constructor(private _servicio:HeladosService) { }
 
   
   @Input() idHelado:number ;

@@ -4,6 +4,7 @@ export class Helado {
 	public sabor: string;
  	public tipo: string;
   public kilos: number;
+  public rutadefoto: string;
 
   constructor(sabor:string, tipo:string, kilos:number) {
     this.sabor = sabor;
