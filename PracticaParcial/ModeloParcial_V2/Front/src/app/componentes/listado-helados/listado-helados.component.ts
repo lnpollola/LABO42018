@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Helado } from '../../clases/helado';
 import { HeladosService  } from '../../servicios/heladosService.service';
-import { TablaMatComponent } from '../../componentes/tabla-mat/tabla-mat.component':
+import { TablaMatComponent } from '../../componentes/tabla-mat/tabla-mat.component';
 
 @Component({
   selector: 'app-listado-helados',

@@ -1,5 +1,6 @@
-<p>
-  {{idHelado}}
-
- <!--{{unHelado.Sabor}}-->
-</p>
+<app-helados
+            [listaHelados]="listaHeladosComponent" 
+            [unHelado]="unHeladoComponent"    
+            (heladosEmitter)="TraerUnHelado($event)"
+            (heladosEmitter)="MostrarHelados()"
+></app-helados>

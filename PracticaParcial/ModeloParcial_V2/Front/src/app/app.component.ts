@@ -48,8 +48,10 @@ export class AppComponent {
 
   
         }
-
-
+  funcionComponent() 
+  {
+    console.info("Funcion component emitter APP");
+  }
 
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { HeladosService} from '../../servicios/heladosService.service';
 import { Helado } from '../../clases/helado';
 
@@ -9,32 +9,26 @@ import { Helado } from '../../clases/helado';
 })
 export class TraerUnHeladoComponent implements OnInit {
 
-  unHelado: Helado;
+  unHeladoComponent: Helado;
+  listaHeladosComponent: any;
+  @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
 
   constructor(private _servicio:HeladosService) { }
 
   
-  @Input() idHelado:number ;
-  
-  MostrarUnHelado(){
-   /* 
+  TraerUnHelado(idHelado)
+  { 
     this._servicio.ServiceTraerUnHelado(idHelado).subscribe(data =>{
-      this.unHelado = JSON.parse(data._body);
+      this.unHeladoComponent = JSON.parse(data._body);
     });
-*/
-    console.log("entro");
   }
 
-  /*
-  DoCheck(){
-    if(this.idHelado==undefined)
-    {
-      this.MostrarUnHelado();
-    }
-
+  
+  MostrarHelados()
+  {    
+    this._servicio.ServiceTraerHelados().subscribe(data => {   
+    this.listaHeladosComponent = JSON.parse(data._body)}); 
   }
-  */
-
 
   ngOnInit() {
   }
