@@ -1,0 +1,23 @@
+<button (click)="TraerHelados()"> Lista de helados  </button>
+
+   
+
+   <table *ngIf="listaHelados"> 
+     <thead> <th> Sabor</th><th>Tipo</th><th>Kilos</th><th>Foto</th> <th>Accion</th> </thead>   
+     
+     <tr *ngFor="let helado of listaHelados"> 
+
+      <td> {{helado.sabor}} </td>
+      <td> {{helado.tipo}} </td>
+      <td> {{helado.kilos}} </td>
+      <td >  <img class="fotoHelado" src="../../../assets/{{helado.sabor}}.jpg"> </td>
+      <td> <app-boton-borrar [id]="helado.id"></app-boton-borrar>  </td>
+     </tr>
+   </table>
+
+
+   <app-form-alta></app-form-alta>
+
+   <br> <br>  
+
+   <app-respuesta-buscar></app-respuesta-buscar>

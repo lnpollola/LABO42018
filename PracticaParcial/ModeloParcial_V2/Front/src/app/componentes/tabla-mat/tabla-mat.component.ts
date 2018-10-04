@@ -7,6 +7,7 @@ export interface PeriodicElement {
   sabor: string;
   tipo: string;
   kgrestantes: number;
+  funciones : string;
 }
 
 @Component({
@@ -25,7 +26,7 @@ export class TablaMatComponent implements OnInit {
   @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
 
   cssClassFriendlyName: string;
-  displayedColumns: string[] = ['id', 'sabor', 'tipo', 'kgrestantes','foto'];
+  displayedColumns: string[] = ['id', 'sabor', 'tipo', 'kgrestantes','foto', 'funciones'];
   dataSource:any;
  
 
@@ -43,6 +44,11 @@ export class TablaMatComponent implements OnInit {
   {
     console.log("LISTADO", this.listado);
     this.dataSource = this.listado;
+  }
+
+  MuestroSeleccion(Idseleccionado:number)
+  {
+    console.info("Muestro valor seleccionado",Idseleccionado);
   }
 
 }
