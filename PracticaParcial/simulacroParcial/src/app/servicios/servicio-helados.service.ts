@@ -34,7 +34,6 @@ export class ServicioHeladosService {
     return this.miServicioGenerico.httpPost("BorrarUno",id)
     .then((data)=>{return data})
     .catch((data)=>{return data})
-
   }
    
 }

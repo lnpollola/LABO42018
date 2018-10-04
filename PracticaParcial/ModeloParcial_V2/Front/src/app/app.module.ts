@@ -25,6 +25,9 @@ import { TablaMatComponent } from './componentes/tabla-mat/tabla-mat.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { BotonBorrarComponent } from './componentes/boton-borrar/boton-borrar.component';
+import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
                  {path:'pruebaParcial', component:HeladosComponent},
@@ -41,7 +44,9 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     TraerUnHeladoComponent,
     PrincipalComponent,
     ListadoHeladosComponent,
-    TablaMatComponent
+    TablaMatComponent,
+    BotonBorrarComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     BrowserAnimationsModule,
     FormsModule,
     MatTabsModule,
+    MatToolbarModule,
     MatInputModule,
     MatButtonModule,
     RouterModule.forRoot(miRuteo)

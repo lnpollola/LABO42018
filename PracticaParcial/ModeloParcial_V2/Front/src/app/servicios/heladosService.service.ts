@@ -31,5 +31,11 @@ export class HeladosService {
   }
 
 
+  public Borrar(id)
+  { 
+    return this.miHttp.httpPost("BorrarUno",id)
+    .then((data)=>{return data})
+    .catch((data)=>{return data})
+  }
 
 }
