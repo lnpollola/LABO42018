@@ -22,6 +22,9 @@ import { ListadoHeladosComponent } from './componentes/listado-helados/listado-h
 import { MatTableModule } from '@angular/material/table';  
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TablaMatComponent } from './componentes/tabla-mat/tabla-mat.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
                  {path:'pruebaParcial', component:HeladosComponent},
@@ -46,6 +49,9 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     MatTableModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatTabsModule,
+    MatInputModule,
+    MatButtonModule,
     RouterModule.forRoot(miRuteo)
 
     //HttpClientModule

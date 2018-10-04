@@ -1,30 +1,19 @@
-<div *ngIf="unHelado" >
+<div class="button-row">
+
+<button mat-stroked-button  (click)="AltaHelado()">Dar de alta helado</button>
+
+<button  mat-stroked-button  (click)="MostrarUnHelado(htmlIdHelado)">Traer 1 helado</button>
+
+<input matInput [(ngModel)]="htmlIdHelado" placeholder="Ingrese id de helado" name="idHelado" type="text"  />
+</div>
+
+  <div *ngIf="unHelado" >
   Sabor de un solo helado: {{unHelado.Sabor}}
   ID: {{unHelado.id_helado}}
    - SABOR: {{unHelado.Sabor}}
   <img src="assets/imagenes/{{unHelado.id_helado}}.JPG" >
 
 
-</div>
-
-<button (click)="MostrarHeladosComponent()">Te muestro los helados</button>
-
-<button (click)="AltaHelado()">Dar de alta helado</button>
-
-<button (click)="MostrarUnHelado(htmlIdHelado)">Traer 1 helado</button>
-
-<input [(ngModel)]="htmlIdHelado" placeholder="ingrese id de helado" name="idHelado" type="text"  style="width:50%"/>
-
-<div *ngIf="mostrarHelados">
-<p *ngFor="let helado of this.listaHelados">
-  
-  
-  ID: {{helado.id_helado}}
-   - SABOR: {{helado.Sabor}}
-  <img src="assets/imagenes/{{helado.id_helado}}.JPG" >
-</p>
-<div>
-
-
+  </div>
 
 
