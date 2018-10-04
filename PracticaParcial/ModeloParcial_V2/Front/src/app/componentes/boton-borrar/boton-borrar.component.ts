@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { HeladosService } from '../../servicios/heladosService.service';
 
 
@@ -11,6 +11,8 @@ export class BotonBorrarComponent implements OnInit {
 
   @Input() id:number;
 
+  @Output() vieneBorrar:EventEmitter<any> = new EventEmitter();
+
   constructor(private httpHelado: HeladosService) { }
 
 
@@ -19,13 +21,10 @@ export class BotonBorrarComponent implements OnInit {
     console.info("Estoy en borrar boton",this.id);
     console.log(this.id);
 
-    let json={
-      "id": this.id
-    }
-
     this.httpHelado.Borrar(this.id)
     .subscribe();
-    
+
+    this.vieneBorrar.emit(); 
   }
 
 

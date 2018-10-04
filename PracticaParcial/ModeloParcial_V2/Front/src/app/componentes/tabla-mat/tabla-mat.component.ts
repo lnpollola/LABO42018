@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { HeladosService } from '../../servicios/heladosService.service';
 
 
@@ -24,14 +24,15 @@ export class TablaMatComponent implements OnInit {
   @Input() listado:any;
 
   @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
+  @Output() vieneBorrarMat: EventEmitter<any> =new EventEmitter();
 
   cssClassFriendlyName: string;
   displayedColumns: string[] = ['id', 'sabor', 'tipo', 'kgrestantes','foto', 'funciones'];
   dataSource:any;
- 
-
   
-  constructor() 
+
+
+  constructor(private _servicio:HeladosService) 
   {
     this.heladosEmitter.emit();
    }
@@ -40,15 +41,26 @@ export class TablaMatComponent implements OnInit {
 
   }
 
-  ngOnChanges() 
-  {
-    console.log("LISTADO", this.listado);
-    this.dataSource = this.listado;
-  }
-
+ 
   MuestroSeleccion(Idseleccionado:number)
   {
     console.info("Muestro valor seleccionado",Idseleccionado);
+  }
+
+  EmitoBorrarTabla()
+  {
+    console.log("Estoy en emitoDeTablaMat");
+    this.vieneBorrarMat.emit();
+  }
+
+  ngOnChanges() 
+  {
+    console.log("LISTADO cambio ONCH", this.listado);
+    this.dataSource = this.listado;
+    
+    this._servicio.ServiceTraerHelados().subscribe(data => {   
+      this.dataSource = JSON.parse(data._body); })
+  
   }
 
 }

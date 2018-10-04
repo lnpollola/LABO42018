@@ -24,6 +24,12 @@ export class ListadoHeladosComponent implements OnInit {
  
   }
 
+  public ActualizoLista()
+  {
+    this._servicio.ServiceTraerHelados().subscribe(data => {   
+      this.listaHelados = JSON.parse(data._body);});
+      
+  }
 
   ngOnInit() {
   }

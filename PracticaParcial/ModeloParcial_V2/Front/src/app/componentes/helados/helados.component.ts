@@ -22,8 +22,6 @@ export class HeladosComponent implements OnInit {
 
   @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
 
-  // @Input() listaHelados: any;
-
   @Input() unHelado: Helado;
 
   constructor(private _servicio:HeladosService) {
