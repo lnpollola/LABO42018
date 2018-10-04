@@ -135,6 +135,27 @@ class Helado
 			}
 		}
 
+		public static function TraerUnHeladoSabor($sabor)
+		{
+			$objetoAcceso = AccesoDatos::DameUnObjetoAcceso();
+			$consulta = $objetoAcceso->RetornarConsulta('SELECT id_helado, Sabor, Tipo, Kilos  
+														 FROM helados 
+														 WHERE Sabor=:sabor');
+			$consulta->bindParam("sabor", $sabor);
+			$consulta->execute();
+			$uno = $consulta->fetchObject("Helado");
+			
+			if($uno == NULL)
+			{ 
+				$uno=0; 
+				return $uno;
+			}
+			else 
+			{ 
+				return $uno; 
+			}
+		}
+
 		public static function BajaHel($id)
 		{
 			

@@ -1,19 +1,35 @@
 <div class="button-row">
 
-<button mat-stroked-button  (click)="AltaHelado()">Dar de alta helado</button>
-
-<button  mat-stroked-button  (click)="MostrarUnHelado(htmlIdHelado)">Traer 1 helado</button>
+<button  mat-stroked-button  (click)="MostrarUnHelado(htmlIdHelado)">Traer Helado</button>
 </div>
 <br>
 <input matInput [(ngModel)]="htmlIdHelado" placeholder="Ingrese id de helado" name="idHelado" type="text"  />
 
 
   <div *ngIf="unHelado" >
+<!-- 
   ID: {{unHelado.id_helado}} <br> 
   SABOR: {{unHelado.Sabor}} <br>
   FOTO
   <br>
-  <img src="assets/imagenes/{{unHelado.id_helado}}.JPG" >
+  <img src="assets/imagenes/{{unHelado.id_helado}}.JPG" > -->
+
+
+  <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>SABOR HELADO</mat-card-title>
+        <mat-card-subtitle> {{unHelado.Sabor}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/imagenes/{{unHelado.id_helado}}.JPG">
+      <mat-card-content>
+        <p>
+            ID: {{unHelado.id_helado}} <br> 
+            SABOR: {{unHelado.Sabor}} <br>
+            Kilos: {{unHelado.Kilos}}
+        </p>
+      </mat-card-content>
+    </mat-card>
 
 
   </div>

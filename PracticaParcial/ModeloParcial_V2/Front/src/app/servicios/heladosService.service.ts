@@ -31,6 +31,11 @@ export class HeladosService {
       .pipe(data => { return data; });
   }
 
+  public ServiceTraerUnHeladoSabor(sabor):Observable<any> {
+    return this.miHttp.httpGet("TraerUnHeladoSabor/"+sabor, {})
+      .pipe(data => { return data; });
+  }
+
 
   public Borrar(id)
   { 

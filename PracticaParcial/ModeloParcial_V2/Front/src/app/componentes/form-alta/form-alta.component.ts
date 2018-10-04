@@ -22,11 +22,9 @@ export class FormAltaComponent implements OnInit {
 
   GuardarHelado(){
      this.helado = new Helado(this.sabor, this.tipo ,this.kilo);
-     console.log(this.helado);
      this.miServicioHelados.ServiceAltaHelado(this.helado)
      .subscribe()
      ;
-
     }
 
   ngOnInit() {

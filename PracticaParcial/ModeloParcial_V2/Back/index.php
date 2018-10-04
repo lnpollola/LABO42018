@@ -103,7 +103,13 @@ $app->add(function ($req, $res, $next) {
                                                                 return $response->withJson($resultado);
                                                                 
                         });
-                                
+
+                        $app->get('/TraerUnHeladoSabor/[{sabor}]', function ($request, $response, $args) {
+                                $uno = Helado::TraerUnHeladoSabor($args['sabor']);
+                                return $response->withJson($uno);
+                                });
+        
+        
 
 
 // //<---------------------------------USUARIO-------------------------------------->
