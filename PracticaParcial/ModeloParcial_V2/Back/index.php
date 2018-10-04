@@ -93,7 +93,17 @@ $app->add(function ($req, $res, $next) {
 
                         //->add(\MWparaAutentificar::class . ':VerificarUsuario')
        
-
+                        $app->post('/borrarHel/[{id}]',function (Request $request, Response $response,$args) {
+                        
+                                                                // $ArrayDeParametros = $request->getParsedBody();  
+                                                                
+                                                                // $resultado = Helado::BajaHel($ArrayDeParametros['id']);
+                                                                $resultado = Helado::BajaHel( $args['id']);
+                                
+                                                                return $response->withJson($resultado);
+                                                                
+                        });
+                                
 
 
 // //<---------------------------------USUARIO-------------------------------------->

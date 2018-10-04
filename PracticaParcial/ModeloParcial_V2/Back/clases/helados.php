@@ -135,7 +135,41 @@ class Helado
 			}
 		}
 
-	
+		public static function BajaHel($id)
+		{
+			
+			// if(is_numeric($id))
+			// {
+				$objetoAcceso = AccesoDatos::DameUnObjetoAcceso();
+				$consulta = $objetoAcceso->RetornarConsulta('UPDATE `helados` 
+															SET	kilos =0  
+															WHERE 	id_helado=:id ');
+				
+				//parametros
+				// $consulta->bindvalue(':id', $id , PDO::PARAM_INT); 
+				$consulta->bindParam("id", $id);
+				$consulta->Execute();
+				
+				$resultado = $consulta->rowCount();
+			
+					if ($resultado==0)
+					{
+						$resultado = "El helado no existe";
+					}
+					else
+					{
+						$resultado = "El helado fue Stock = 0";
+					}
+
+				return $resultado;
+			// }
+			// else
+			// {
+			// 	return "El dato es invalido, debe ser un entero";
+			// }
+		
+		
+		}
 
 	
 
