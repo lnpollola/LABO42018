@@ -10,19 +10,21 @@ import { HeladosService } from '../../servicios/heladosService.service';
 export class BotonBorrarComponent implements OnInit {
 
   @Input() id:number;
+
   constructor(private httpHelado: HeladosService) { }
 
 
   Borrar()
   {
+    console.info("Estoy en borrar boton",this.id);
     console.log(this.id);
 
     let json={
       "id": this.id
     }
-    this.httpHelado.Borrar(json)
-    .then((data)=>{ console.log(data)})
-    .catch((data)=>{console.log(data)})
+
+    this.httpHelado.Borrar(this.id)
+    .subscribe();
     
   }
 

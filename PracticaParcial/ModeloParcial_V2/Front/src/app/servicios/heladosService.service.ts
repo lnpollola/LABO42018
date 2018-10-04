@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { MiHttpService } from './mi-http.service';
 import { Observable } from 'rxjs';
-
+import  {map, catchError} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class HeladosService {
 
   metodo: string;
+  handleError:any;
 
   constructor(public miHttp: MiHttpService) {
 
@@ -33,9 +34,9 @@ export class HeladosService {
 
   public Borrar(id)
   { 
-    return this.miHttp.httpPost("BorrarUno",id)
-    .then((data)=>{return data})
-    .catch((data)=>{return data})
+    console.info("Estoy en borrar service",id);
+    return this.miHttp.httpPost("borrarHel/"+id,{})
+    .pipe((data)=>{return data}, catchError(this.handleError));
   }
 
 }
