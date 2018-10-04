@@ -22,15 +22,15 @@ export class HeladosComponent implements OnInit {
 
   @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
 
-  @Input() listaHelados: any;
+  // @Input() listaHelados: any;
 
   @Input() unHelado: Helado;
 
   constructor(private _servicio:HeladosService) {
     
-    this._servicio.ServiceTraerHelados().subscribe(data => {   
-      this.listaHelados = JSON.parse(data._body);
-    })
+    // this._servicio.ServiceTraerHelados().subscribe(data => {   
+    //   this.listaHelados = JSON.parse(data._body);
+    // })
     
   }
 
@@ -51,10 +51,10 @@ export class HeladosComponent implements OnInit {
     this.heladosEmitter.emit(idHelado); 
   }
 
-  MostrarHeladosComponent()
-  {
-    this.heladosEmitter.emit()
-  }
+  // MostrarHeladosComponent()
+  // {
+  //   this.heladosEmitter.emit()
+  // }
 
 }
 
