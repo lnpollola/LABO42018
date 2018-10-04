@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HeladosService } from '../../servicios/heladosService.service';
+
 
 export interface PeriodicElement {
   id: string;
@@ -19,26 +20,29 @@ export class TablaMatComponent implements OnInit {
   @Input('matColumnDef') name: string;
   @Input() sticky: boolean;
   @Input() stickyEnd: boolean;
+  @Input() listado:any;
 
+  @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
 
   cssClassFriendlyName: string;
   displayedColumns: string[] = ['id', 'sabor', 'tipo', 'kgrestantes','foto'];
-  listaHelados:any;
   dataSource:any;
-  // dataSource = ELEMENT_DATA;
  
 
   
-  constructor(private _servicio:HeladosService) 
+  constructor() 
   {
-    this._servicio.ServiceTraerHelados().subscribe(data => {   
-      this.listaHelados = JSON.parse(data._body);
-      this.dataSource = this.listaHelados;
-    })
-
+    this.heladosEmitter.emit();
    }
 
   ngOnInit() {
+
+  }
+
+  ngOnChanges() 
+  {
+    console.log("LISTADO", this.listado);
+    this.dataSource = this.listado;
   }
 
 }
