@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BotonBorrarComponent } from './componentes/boton-borrar/boton-borrar.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { FormAltaComponent } from './componentes/form-alta/form-alta.component';
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
                  {path:'pruebaParcial', component:HeladosComponent},
@@ -46,7 +47,8 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     ListadoHeladosComponent,
     TablaMatComponent,
     BotonBorrarComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    FormAltaComponent
   ],
   imports: [
     BrowserModule,

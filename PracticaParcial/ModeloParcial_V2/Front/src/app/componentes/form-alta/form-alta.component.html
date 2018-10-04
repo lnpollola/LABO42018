@@ -1,0 +1,16 @@
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+  <textarea matInput [(ngModel)]="sabor" type="text" placeholder="Sabor" name="sabor"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+  <textarea matInput [(ngModel)]="tipo" type="text" placeholder="Tipo" name="tipo"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+  <textarea matInput [(ngModel)]="kilo" type="text" placeholder="Kilos" name="kilos"></textarea>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" (click)="GuardarHelado()"> Guardar </button>
+</form>
