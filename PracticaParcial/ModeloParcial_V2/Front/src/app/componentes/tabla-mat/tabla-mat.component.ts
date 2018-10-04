@@ -22,7 +22,7 @@ export class TablaMatComponent implements OnInit {
 
 
   cssClassFriendlyName: string;
-  displayedColumns: string[] = ['id', 'sabor', 'tipo', 'kgrestantes'];
+  displayedColumns: string[] = ['id', 'sabor', 'tipo', 'kgrestantes','foto'];
   listaHelados:any;
   dataSource:any;
   // dataSource = ELEMENT_DATA;
