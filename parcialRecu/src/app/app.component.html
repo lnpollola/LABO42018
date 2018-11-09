@@ -1,0 +1,77 @@
+
+<table class="table">
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Fecha Nacimiento</th>
+          <th>Foto</th>
+          <!--th>Editar</th-->
+          <th>Eliminar</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let mascota of listado" appDirectivaTipos [tipoMascota]="mascota.Tipo">
+    <!--  <tr *ngFor="let mascota of array">  -->
+      
+          <td>{{mascota.id_mascota}}</td>
+          <!-- <td><img width="50" height="50" [src]="mascota.foto"></td> -->
+                    
+          <td>{{mascota.Nombre}}</td>
+          <td>{{mascota.Tipo}}</td>
+          <td>{{mascota.Fechadenacimiento}}</td>
+          <td><img width="50" height="50" src="../assets/imagenes/{{mascota.Rutadefoto}}.jpg"></td> 
+          <td><app-borrar-boton [mascota]="mascota" (refresh)="refreshGrid($event)"></app-borrar-boton></td>
+<!-- <td>ELIMINAR</td> -->
+           <!--td>
+          
+<button type="button"  (click)="editarPersona(mascota)" class="btn btn-secondary">Editar</button>
+</td-->
+
+          <!-- ACA <td><app-borrar-boton [mascota]="mascota" (refresh)="refreshGrid($event)"></app-borrar-boton></td> -->
+          <!-- <td><app-borrar-boton [mascota]="mascota" (refresh)="refreshGrid($event)"></app-borrar-boton></td> -->
+          
+      </tr>
+  </tbody>
+</table>
+
+  <app-buscar [array]="listado" (encontro)="mostrarEncontro($event)"></app-buscar>
+     
+
+<div *ngIf="mascotaBuscada">
+    <h1>Mascota : {{mascotaBuscada.Nombre}}</h1>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Tipo: {{mascotaBuscada.Tipo}}</label>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">F.Nacimiento : {{mascotaBuscada.Fechadenacimiento}}</label>
+    </div>
+    <div class="form-group">
+            <label for="exampleInputEmail1">Foto : </label><img width="150" height="150"  src="../assets/imagenes/{{mascotaBuscada.Rutadefoto}}.jpg">        
+    </div>
+</div>
+
+
+<br><br>
+ <h1>FORM ALTA</h1>
+
+
+<form *ngIf="mascotaAlta">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nombre: </label>
+        <input  [(ngModel)]="AltaNombre" [ngModelOptions]="{standalone: true}" type="text" class="form-control">
+        
+    </div>
+<div class="form-group">
+    <label for="sel1">Seleccionar Tipo:</label>
+    <select [(ngModel)]="AltaTipo" class="form-control" id="sel1">
+    <option value="perro">Perro</option>
+    <option value="gato">Gato</option>
+    </select>    
+</div>
+<button (click)="guardarMascota()" class="btn btn-primary">Guardar</button>
+</form>
+
+
