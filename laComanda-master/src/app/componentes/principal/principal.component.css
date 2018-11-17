@@ -1,0 +1,25 @@
+body{
+    background-image: url("../../../assets/imagenes/bar-1869656_1280.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    
+    
+    
+}
+p{
+    color: beige;
+}
+
+.barra{
+    background-color: rgba(37, 36, 36, 0.548);
+    width: 100%;
+}
+
+.logout{
+cursor: pointer;
+margin-right: 5px;
+
+}
+
